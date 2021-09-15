@@ -1,0 +1,27 @@
+<h2>
+  Please select new Assignments
+</h2>
+<mat-form-field appearance="fill" *ngIf="this.cameraList.length > 0">
+  <mat-label>Select a Camera</mat-label>
+  <mat-select [(ngModel)]="chosenCamera" required>
+    <mat-option *ngFor="let camera of this.cameraList" [value]="camera.id">
+      {{camera.deviceNo}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="cameraControl.hasError('required')">Please choose a Camera</mat-error>
+</mat-form-field>
+<mat-error *ngIf="this.cameraList.length == 0">No cameras available</mat-error>
+<mat-form-field appearance="fill" *ngIf="this.vehicleList.length > 0">
+  <mat-label>Select a Vehicle</mat-label>
+  <mat-select [(ngModel)]="chosenVehicle" required>
+    <mat-option *ngFor="let vehicle of this.vehicleList" [value]="vehicle.id">
+      {{vehicle.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="vehicleControl.hasError('required')">Please choose a Vehicle</mat-error>
+</mat-form-field>
+<mat-error *ngIf="this.vehicleList.length == 0">No vehicles available</mat-error>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="confirmSelection()" [disabled]="chosenCamera === '' || chosenVehicle === ''">Add Assignment</button>
+</mat-dialog-actions>

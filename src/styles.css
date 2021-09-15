@@ -1,0 +1,54 @@
+/* Add application styles & imports to this file! */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* reset styles */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  body{
+    background-color: #c1d6d5;
+  }
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+/* global styles */
+header{
+    padding: 50px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 15px;
+
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.mat-form-field.mat-focused .mat-form-field-label{
+  color: #301927;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: #301927;
+}

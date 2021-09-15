@@ -1,0 +1,25 @@
+li{
+    border: solid 1px black;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 15px;
+    margin: 0 15px;
+}
+h3{
+    font-weight: 600;
+    text-decoration: underline;
+}
+.column{
+    text-align: left;
+    margin: 15px 0 0 0;
+}
+.column:first-child{
+    padding-right: 15px;
+    border-right: solid 1px black;
+}
+.column+.column{
+    margin-left: 15px;
+}
+.filter-wrapper{
+    min-width: 350px;
+}

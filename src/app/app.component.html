@@ -1,0 +1,44 @@
+<div class="container">
+	<app-header></app-header>
+	<div class="row">
+		<h2>{{assignmentTitle}}</h2>
+		<app-popup text="+" className="add" title="add new assignment" (popupClosed)="updateStoredValues()"></app-popup>  
+	</div>
+	  <form>
+		<mat-form-field appearance="fill" class="filter-wrapper">
+		  <mat-label>Filter By Camera or Vehicle Name</mat-label>
+		  <input class="" matInput  type="text" placeholder="Filter by Camera or Vehicle Name" [(ngModel)]="filterText" name="filter">
+		</mat-form-field>
+	  </form>
+	<div class="row">
+		<ul *ngFor="let assignment of (this.assignments | filter: 'cameraName': 'vehicleName': this.filterText)">
+			<li *ngIf="assignment.deleted === false">
+				<h3>
+					Assignment ID: {{ assignment.id}}
+				</h3>
+				<div class="row">
+					<div class="column">
+						<span>
+							Camera-ID: {{ assignment.cameraId}}
+						</span>
+						<span>
+							Camera-Name: {{ assignment.cameraName}}
+						</span>
+					</div>
+					<div class="column">
+						<span>
+							Vehicle-ID: {{ assignment.vehicleId}}
+						</span>
+						<span>
+							Vehicle-Name: {{ assignment.vehicleName}}
+						</span>
+					</div>
+					<app-button text="&#215;" className="remove" (btnClick)="removeAssign(assignment.id)" title="delete assignment"></app-button>
+				</div>
+			</li>
+		</ul>
+		<span *ngIf="this.assignments.length === 0">
+			No Assignments Set, Add One Above.
+		</span>
+	</div>
+</div>

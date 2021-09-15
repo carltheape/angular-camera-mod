@@ -1,0 +1,27 @@
+button{
+    border-radius: 3px;
+    font-size: 24px;
+    border: 0;
+    padding: 10px 10px 14px;
+    line-height: 0.5;
+    font-weight: bold;
+    margin: auto 0;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+button.add{
+    background-color: #235789;
+    color: white;
+    height: 45px;
+    width: 45px;
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-box-shadow: 0; 
+    box-shadow: 0;
+}
+
+button:hover{
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.44); 
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.44);
+}
